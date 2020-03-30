@@ -1,0 +1,24 @@
+# Permissions required to create a custom role: 
+#   iam.roles.create 
+#   - by default the project or organization owner has this permission.
+#
+# Execute with
+#   gcloud iam roles create <role-id> --file <file.yaml>
+#
+# Reference: https://cloud.google.com/iam/docs/creating-custom-roles
+
+title: "Docker GCR User Access Role"
+
+description: "Custom role for GCR access (Docker)"
+
+stage: "BETA"
+
+includedPermissions:
+- storage.buckets.get
+- storage.buckets.list
+
+- storage.objects.create
+- storage.objects.delete
+- storage.objects.get
+- storage.objects.list
+- storage.objects.update
